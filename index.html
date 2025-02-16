@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нефедов Дмитрий - C# разработчик</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Шапка */
+        .header {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: center;
+        }
+
+        .photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #2a2a2a;
+        }
+
+        .contacts {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        /* Секции */
+        .section {
+            background: #1a1a1a;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: #7c4dff;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #2a2a2a;
+            padding-bottom: 0.5rem;
+        }
+
+        .job-item, .edu-item {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #2a2a2a;
+            border-radius: 8px;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-tag {
+            background: #7c4dff;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: #7c4dff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Стиль для блока "Обо мне" */
+        .about-me {
+            background: #2a2a2a;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .about-me p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .photo {
+                margin: 0 auto;
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 16px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="media/photo_2025-01-05_18-39-50.jpg" alt="Фото" class="photo">
+            <div class="contacts">
+                <h1>Нефедов Дмитрий Алексеевич</h1>
+                <p>Мужчина, 21 год, родился 24 июля 2003</p>
+                <p>Телефон: <a href="tel:+79775670032">+7 (977) 567-00-32</a></p>
+                <p>Email: <a href="mailto:nefedovdima03@mail.ru">nefedovdima03@mail.ru</a></p>
+                <p>📍 Москва, готов к переезду</p>
+            </div>
+        </header>
+
+        <!-- Блок "Обо мне" -->
+        <section class="section about-me">
+            <h2>Обо мне</h2>
+            <p>Я — Junior C# разработчик с глубокими знаниями и практическим опытом в разработке программных продуктов на языке C#. Работал с технологиями WPF, MySQL, и использую асинхронное программирование для повышения производительности. Стремлюсь развиваться в области программирования, быстро осваиваю новые технологии и всегда открыт к обучению и новым вызовам.</p>
+            <p>Обладаю опытом разработки систем, включая создание интерактивных приложений, работу с базами данных и реализацию сложных бизнес-логик. Всегда стремлюсь создавать код, который будет не только эффективным, но и легко поддерживаемым.</p>
+        </section>
+
+        <section class="section">
+            <h2>Цель</h2>
+            <p>Junior C# Developer с зарплатой 110 000 ₽</p>
+        </section>
+
+        <section class="section">
+            <h2>Опыт работы</h2>
+            <div class="job-item">
+                <h3>ООО Алгоритмика</h3>
+                <p>Март 2022 - настоящее время</p>
+                <p>Преподаватель курсов программирования</p>
+                <ul>
+                    <li>Основы логики и программирования (Scratch)</li>
+                    <li>Создание сайтов (HTML, CSS)</li>
+                    <li>Python и геймдизайн</li>
+                </ul>
+            </div>
+
+            <div class="job-item">
+                <h3>Самокат (ООО Умное пространство)</h3>
+                <p>Октябрь 2024 - Декабрь 2024</p>
+                <p>Ассистент архитектора бизнес-процессов</p>
+                <ul>
+                    <li>Анализ 300+ бизнес-процессов</li>
+                    <li>Моделирование в нотации BPMN</li>
+                    <li>Автоматизация процессов</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Образование</h2>
+            <div class="edu-item">
+                <h3>Московский финансово-юридический университет МФЮА</h3>
+                <p>Бизнес-информатика (2026)</p>
+            </div>
+            <div class="edu-item">
+                <h3>Красногорский колледж</h3>
+                <p>Информационные системы и программирование (2023)</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Навыки</h2>
+            <div class="skills">
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">WPF</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">HTML/CSS</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">BPMN</span>
+                <span class="skill-tag">Visual Studio</span>
+                <span class="skill-tag">Git</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Проекты</h2>
+            <div class="job-item">
+                <h3>Алгоритмика АИС</h3>
+                <ul>
+                    <li>WPF приложение для автоматизации бизнес-процессов</li>
+                    <li>Интеграция с MySQL</li>
+                    <li>Реализация паттерна MVVM</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>2025 © Дмитрий Нефедов</p>
+    </footer>
+
+    <script>
+        // Анимация при скролле
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.section, .job-item, .edu-item').forEach((el) => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.5s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
