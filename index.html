@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Нефедов Дмитрий - C# разработчик</title>
+    <title>Нефедов Дмитрий - Full Stack C# Developer</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary: #7c4dff;
+            --dark: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --text: #e0e0e0;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,8 +21,8 @@
         }
 
         body {
-            background: #0a0a0a;
-            color: #e0e0e0;
+            background: var(--dark);
+            color: var(--text);
             line-height: 1.6;
         }
 
@@ -24,7 +32,7 @@
             padding: 2rem;
         }
 
-        /* Шапка */
+        /* Header */
         .header {
             display: grid;
             grid-template-columns: 200px 1fr;
@@ -33,23 +41,34 @@
             align-items: center;
         }
 
+        header a{
+            color: #7c4dff;
+        }
+
         .photo {
             width: 200px;
             height: 200px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #2a2a2a;
+            border: 3px solid var(--dark-gray);
         }
 
         .contacts {
-            background: #1a1a1a;
+            background: var(--dark-gray);
             padding: 1.5rem;
             border-radius: 10px;
         }
 
-        /* Секции */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0.5rem 0;
+        }
+
+        /* Sections */
         .section {
-            background: #1a1a1a;
+            background: var(--dark-gray);
             padding: 2rem;
             margin-bottom: 2rem;
             border-radius: 10px;
@@ -63,55 +82,71 @@
         }
 
         h2 {
-            color: #7c4dff;
+            color: var(--primary);
             margin-bottom: 1.5rem;
-            border-bottom: 2px solid #2a2a2a;
+            border-bottom: 2px solid var(--dark);
             padding-bottom: 0.5rem;
         }
 
-        .job-item, .edu-item {
+        .job-item, .edu-item, .project-item {
             margin-bottom: 2rem;
-            padding: 1rem;
+            padding: 1.5rem;
             background: #2a2a2a;
             border-radius: 8px;
+            position: relative;
         }
 
-        .skills {
+        .timeline {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1rem;
         }
 
+        .skill-category {
+            margin-bottom: 1.5rem;
+        }
+
         .skill-tag {
-            background: #7c4dff;
+            background: var(--primary);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 20px;
             text-align: center;
             font-size: 0.9rem;
+            margin: 0.25rem;
+            display: inline-block;
         }
 
-        a {
-            color: #7c4dff;
-            text-decoration: none;
+        .accordion {
+            cursor: pointer;
+            padding: 1rem;
+            background: #333;
+            border-radius: 5px;
+            margin: 0.5rem 0;
         }
 
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Стиль для блока "Обо мне" */
-        .about-me {
+        .panel {
+            display: none;
+            padding: 1rem;
             background: #2a2a2a;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 5px;
         }
 
-        .about-me p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 1rem;
+        .recommendations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .recommendation-card {
+            background: #2a2a2a;
+            padding: 1.5rem;
+            border-radius: 8px;
         }
 
         @media (max-width: 768px) {
@@ -125,11 +160,11 @@
             }
         }
 
-        footer {
-            text-align: center;
-            font-size: 16px;
-            margin-top: 40px;
-        }
+            footer {
+                text-align: center;
+                font-size: 16px;
+                margin-top: 40px;
+            }
 
         footer p {
             color: #777;
@@ -139,88 +174,169 @@
 <body>
     <div class="container">
         <header class="header">
-            <img src="media/photo_2025-01-05_18-39-50.jpg" alt="Фото" class="photo">
+            <img src="media/image1.jpeg" alt="Фото" class="photo">
             <div class="contacts">
                 <h1>Нефедов Дмитрий Алексеевич</h1>
-                <p>Мужчина, 21 год, родился 24 июля 2003</p>
-                <p>Телефон: <a href="tel:+79775670032">+7 (977) 567-00-32</a></p>
-                <p>Email: <a href="mailto:nefedovdima03@mail.ru">nefedovdima03@mail.ru</a></p>
-                <p>📍 Москва, готов к переезду</p>
+                <div class="contact-item">
+                    <i class='bx bx-calendar'></i>
+                    <p>24 июля 2003 (21 год)</p>
+                </div>
+                <div class="contact-item">
+                    <i class='bx bx-phone'></i>
+                    <a href="tel:+79775670032">+7 (977) 567-00-32</a>
+                </div>
+                <div class="contact-item">
+                    <i class='bx bx-envelope'></i>
+                    <a href="mailto:nefedovdima03@mail.ru">nefedovdima03@mail.ru</a>
+                </div>
+                <div class="contact-item">
+                    <i class='bx bx-map'></i>
+                    <p>Московская обл., Шаховская</p>
+                </div>
             </div>
         </header>
 
-        <!-- Блок "Обо мне" -->
-        <section class="section about-me">
-            <h2>Обо мне</h2>
-            <p>Я — Junior C# разработчик с глубокими знаниями и практическим опытом в разработке программных продуктов на языке C#. Работал с технологиями WPF, MySQL, и использую асинхронное программирование для повышения производительности. Стремлюсь развиваться в области программирования, быстро осваиваю новые технологии и всегда открыт к обучению и новым вызовам.</p>
-            <p>Обладаю опытом разработки систем, включая создание интерактивных приложений, работу с базами данных и реализацию сложных бизнес-логик. Всегда стремлюсь создавать код, который будет не только эффективным, но и легко поддерживаемым.</p>
-        </section>
-
+        <!-- Цель -->
         <section class="section">
             <h2>Цель</h2>
-            <p>Junior C# Developer с зарплатой 110 000 ₽</p>
+            <p><strong>Junior C# Developer</strong> с зарплатой 110 000 ₽</p>
+            <div class="timeline">Готов к переезду: Москва | Не готов к командировкам</div>
         </section>
 
+        <!-- Опыт работы -->
         <section class="section">
-            <h2>Опыт работы</h2>
+            <h2>Опыт работы (3 года)</h2>
+            
             <div class="job-item">
                 <h3>ООО Алгоритмика</h3>
-                <p>Март 2022 - настоящее время</p>
+                <div class="timeline">Март 2022 - настоящее время | Волоколамск</div>
                 <p>Преподаватель курсов программирования</p>
-                <ul>
-                    <li>Основы логики и программирования (Scratch)</li>
-                    <li>Создание сайтов (HTML, CSS)</li>
-                    <li>Python и геймдизайн</li>
-                </ul>
+                <div class="accordion">Подробности</div>
+                <div class="panel">
+                    <ul>
+                        <li>Преподавание: Scratch Jr, Scratch, HTML/CSS, Python, Roblox Studio</li>
+                        <li>Разработка учебных программ</li>
+                        <li>Автоматизация отчетности с использованием Excel</li>
+                        <li>Управление системами мотивации учащихся</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="job-item">
                 <h3>Самокат (ООО Умное пространство)</h3>
-                <p>Октябрь 2024 - Декабрь 2024</p>
+                <div class="timeline">Октябрь 2024 - Декабрь 2024 | Москва</div>
                 <p>Ассистент архитектора бизнес-процессов</p>
-                <ul>
-                    <li>Анализ 300+ бизнес-процессов</li>
-                    <li>Моделирование в нотации BPMN</li>
-                    <li>Автоматизация процессов</li>
-                </ul>
+                <div class="accordion">Подробности</div>
+                <div class="panel">
+                    <ul>
+                        <li>Анализ 300+ сквозных бизнес-процессов</li>
+                        <li>Моделирование в BPMN 2.0</li>
+                        <li>Разработка чек-листов для контроля качества</li>
+                        <li>Участие в автоматизации процессов</li>
+                        <li>Интеграция с CRM и ERP системами</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
+        <!-- Образование -->
         <section class="section">
             <h2>Образование</h2>
             <div class="edu-item">
-                <h3>Московский финансово-юридический университет МФЮА</h3>
-                <p>Бизнес-информатика (2026)</p>
+                <h3>МФЮА</h3>
+                <div class="timeline">2023-2026 (ожидается)</div>
+                <p>Бизнес-информатика</p>
+                <p>Информационные системы и технологии</p>
             </div>
+
             <div class="edu-item">
                 <h3>Красногорский колледж</h3>
-                <p>Информационные системы и программирование (2023)</p>
+                <div class="timeline">2023</div>
+                <p>Информационные системы и программирование</p>
             </div>
         </section>
 
+        <!-- Навыки -->
         <section class="section">
-            <h2>Навыки</h2>
-            <div class="skills">
-                <span class="skill-tag">C#</span>
-                <span class="skill-tag">WPF</span>
-                <span class="skill-tag">MySQL</span>
-                <span class="skill-tag">HTML/CSS</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">BPMN</span>
-                <span class="skill-tag">Visual Studio</span>
-                <span class="skill-tag">Git</span>
+            <h2>Технические навыки</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Программирование</h3>
+                    <span class="skill-tag">C#</span>
+                    <span class="skill-tag">WPF</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">MySQL</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Инструменты</h3>
+                    <span class="skill-tag">Visual Studio</span>
+                    <span class="skill-tag">Jira</span>
+                    <span class="skill-tag">Confluence</span>
+                    <span class="skill-tag">Git</span>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Прочее</h3>
+                    <span class="skill-tag">BPMN 2.0</span>
+                    <span class="skill-tag">Scrum</span>
+                    <span class="skill-tag">ООП</span>
+                    <span class="skill-tag">MVVM</span>
+                </div>
             </div>
         </section>
 
+        <!-- Проекты -->
         <section class="section">
-            <h2>Проекты</h2>
-            <div class="job-item">
+            <h2>Ключевые проекты</h2>
+            <div class="project-item">
                 <h3>Алгоритмика АИС</h3>
                 <ul>
-                    <li>WPF приложение для автоматизации бизнес-процессов</li>
+                    <li>WPF приложение с использованием паттерна MVVM</li>
                     <li>Интеграция с MySQL</li>
-                    <li>Реализация паттерна MVVM</li>
+                    <li>Реализация асинхронного программирования</li>
+                    <li>Система управления стилями через XAML</li>
+                    <li>Автоматизация отчетности в Excel</li>
                 </ul>
+            </div>
+        </section>
+
+        <!-- Дополнительно -->
+        <section class="section">
+            <h2>Дополнительная информация</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Языки</h3>
+                    <p>Русский (родной)<br>Английский (A2)</p>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Водительские права</h3>
+                    <p>Категория B</p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Личные качества</h3>
+                    <p>Обучаемость<br>Ответственность<br>Внимание к деталям<br>Стрессоустойчивость</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Рекомендации -->
+        <section class="section">
+            <h2>Рекомендации</h2>
+            <div class="recommendations">
+                <div class="recommendation-card">
+                    <h3>Сергей (Самокат)</h3>
+                    <p>Ведущий архитектор процессов</p>
+                    <p>+7 (XXX) XXX-XX-XX</p>
+                </div>
+                <div class="recommendation-card">
+                    <h3>Артём (Самокат)</h3>
+                    <p>Лидер группы</p>
+                    <p>+7 (XXX) XXX-XX-XX</p>
+                </div>
             </div>
         </section>
     </div>
@@ -230,7 +346,16 @@
     </footer>
 
     <script>
-        // Анимация при скролле
+        // Аккордеон
+        document.querySelectorAll('.accordion').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const panel = this.nextElementSibling;
+                panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        // Анимации
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting) {
@@ -240,7 +365,7 @@
             });
         });
 
-        document.querySelectorAll('.section, .job-item, .edu-item').forEach((el) => {
+        document.querySelectorAll('.section, .job-item, .edu-item, .project-item').forEach(el => {
             el.style.opacity = 0;
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'all 0.5s ease-out';
