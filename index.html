@@ -41,8 +41,13 @@
             align-items: center;
         }
 
-        header a{
+        header a {
             color: #7c4dff;
+            transition: color 0.3s ease;
+        }
+
+        header a:hover {
+            color: #fff;
         }
 
         .photo {
@@ -66,6 +71,20 @@
             margin: 0.5rem 0;
         }
 
+        /* Стиль для блока "Обо мне" */
+        .about-me {
+            background: #2a2a2a;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .about-me p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
         /* Sections */
         .section {
             background: var(--dark-gray);
@@ -73,6 +92,9 @@
             margin-bottom: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-out;
         }
 
         h1 {
@@ -128,6 +150,11 @@
             background: #333;
             border-radius: 5px;
             margin: 0.5rem 0;
+            transition: background 0.3s;
+        }
+
+        .accordion:hover {
+            background: var(--primary);
         }
 
         .panel {
@@ -149,26 +176,87 @@
             border-radius: 8px;
         }
 
+        /* Проекты */
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tech-tag {
+            background: #2a2a2a;
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            border: 1px solid var(--primary);
+            font-size: 0.8rem;
+        }
+
+        .project-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .detail-card {
+            background: #2a2a2a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .detail-card i {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .detail-card h4 {
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .detail-card ul {
+            padding-left: 1.2rem;
+        }
+
+        .detail-card li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 16px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            color: #777;
+        }
+
+        /* Плавные анимации */
         @media (max-width: 768px) {
             .header {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-            
+
             .photo {
                 margin: 0 auto;
             }
         }
 
-            footer {
-                text-align: center;
-                font-size: 16px;
-                margin-top: 40px;
-            }
 
-        footer p {
-            color: #777;
-        }
     </style>
 </head>
 <body>
@@ -196,11 +284,18 @@
             </div>
         </header>
 
+        <!-- Блок "Обо мне" -->
+        <section class="section about-me">
+            <h2>Обо мне</h2>
+            <p>Я — Junior C# разработчик с глубокими знаниями и практическим опытом в разработке программных продуктов на языке C#. Работал с технологиями WPF, MySQL, и использую асинхронное программирование для повышения производительности. Стремлюсь развиваться в области программирования, быстро осваиваю новые технологии и всегда открыт к обучению и новым вызовам.</p>
+            <p>Обладаю опытом разработки систем, включая создание интерактивных приложений, работу с базами данных и реализацию сложных бизнес-логик. Всегда стремлюсь создавать код, который будет не только эффективным, но и легко поддерживаемым.</p>
+        </section>
+
         <!-- Цель -->
         <section class="section">
             <h2>Цель</h2>
             <p><strong>Junior C# Developer</strong> с зарплатой 110 000 ₽</p>
-            <div class="timeline">Готов к переезду: Москва | Не готов к командировкам</div>
+            <div class="timeline">Готов к переезду: Москва | Полная занятость, частичная занятость, стажировка | Удаленная работа</div>
         </section>
 
         <!-- Опыт работы -->
@@ -215,9 +310,8 @@
                 <div class="panel">
                     <ul>
                         <li>Преподавание: Scratch Jr, Scratch, HTML/CSS, Python, Roblox Studio</li>
-                        <li>Разработка учебных программ</li>
-                        <li>Автоматизация отчетности с использованием Excel</li>
-                        <li>Управление системами мотивации учащихся</li>
+                        <li>Управление системой мотивации учащихся</li>
+                        <li>Администрирование и разработка "Алгоритмика АИС"</li>
                     </ul>
                 </div>
             </div>
@@ -229,11 +323,12 @@
                 <div class="accordion">Подробности</div>
                 <div class="panel">
                     <ul>
-                        <li>Анализ 300+ сквозных бизнес-процессов</li>
-                        <li>Моделирование в BPMN 2.0</li>
-                        <li>Разработка чек-листов для контроля качества</li>
-                        <li>Участие в автоматизации процессов</li>
-                        <li>Интеграция с CRM и ERP системами</li>
+                        <li>Знание/Изучение методологии моделирования сквозных бизнес-процессов в нотации BPMN</li>
+                        <li>Анализ 300+ сквозных процессов коммерческого блока на предмет соблюдения методологии</li>
+                        <li>Формирование чек-листа с замечаниями и обеспечение контроля по их устранению</li>
+                        <li>Участие в актуализации процессов управления данными поставщика и заключение нового договора с контрагентом</li>
+                        <li>Интервью с заказчиком</li>
+                        <li>Формирование схем процессов в нотации BPMN</li>
                     </ul>
                 </div>
             </div>
@@ -253,6 +348,12 @@
                 <h3>Красногорский колледж</h3>
                 <div class="timeline">2023</div>
                 <p>Информационные системы и программирование</p>
+            </div>
+            
+            <div class="edu-item">
+                <h3>Корпорация 1Т</h3>
+                <div class="timeline">2023</div>
+                <p>Разработка Web и мультимедийных приложений</p>
             </div>
         </section>
 
@@ -279,26 +380,10 @@
 
                 <div class="skill-category">
                     <h3>Прочее</h3>
-                    <span class="skill-tag">BPMN 2.0</span>
-                    <span class="skill-tag">Scrum</span>
+                    <span class="skill-tag">BPMN</span>
                     <span class="skill-tag">ООП</span>
                     <span class="skill-tag">MVVM</span>
                 </div>
-            </div>
-        </section>
-
-        <!-- Проекты -->
-        <section class="section">
-            <h2>Ключевые проекты</h2>
-            <div class="project-item">
-                <h3>Алгоритмика АИС</h3>
-                <ul>
-                    <li>WPF приложение с использованием паттерна MVVM</li>
-                    <li>Интеграция с MySQL</li>
-                    <li>Реализация асинхронного программирования</li>
-                    <li>Система управления стилями через XAML</li>
-                    <li>Автоматизация отчетности в Excel</li>
-                </ul>
             </div>
         </section>
 
@@ -328,17 +413,81 @@
             <h2>Рекомендации</h2>
             <div class="recommendations">
                 <div class="recommendation-card">
-                    <h3>Сергей (Самокат)</h3>
-                    <p>Ведущий архитектор процессов</p>
+                    <h3>Сергей (ООО Умное пространство)</h3>
+                    <p>Lead E2E Process Architect</p>
                     <p>+7 (XXX) XXX-XX-XX</p>
                 </div>
                 <div class="recommendation-card">
-                    <h3>Артём (Самокат)</h3>
-                    <p>Лидер группы</p>
+                    <h3>Артём (ООО Умное пространство)</h3>
+                    <p>Team Leader</p>
                     <p>+7 (XXX) XXX-XX-XX</p>
                 </div>
             </div>
         </section>
+
+        <!-- Проекты -->
+        <section class="section">
+            <h2>Ключевые проекты</h2>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <h3>Алгоритмика АИС</h3>
+                    <div class="tech-stack">
+                        <span class="tech-tag">WPF</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">MVVM</span>
+                        <span class="tech-tag">SOLID</span>
+                    </div>
+                </div>
+
+                <div class="project-details">
+                    <div class="detail-card">
+                        <i class='bx bx-code-curly'></i>
+                        <h4>Основные технологии</h4>
+                        <ul>
+                            <li>Создание удобного и адаптивного интерфейса с использованием WPF</li>
+                            <li>Использование асинхронных операций (async/await) для повышения производительности</li>
+                            <li>Централизованное управление стилями через XAML</li>
+                            <li>Оптимизация SQL-запросов для более быстрого доступа к данным</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-card">
+                        <i class='bx bx-check-shield'></i>
+                        <h4>Реализованные функции</h4>
+                        <ul>
+                            <li>Автоматизация отчетности с возможностью экспорта в Excel</li>
+                            <li>Аналитика занятий с выводом статистики по проведенным урокам и посещаемости</li>
+                            <li>Магазин с карточками товаров, позволяющий ученикам зарабатывать баллы</li>
+                            <li>Корзина товаров с расчетом общей стоимости и возможностью управления количеством товаров</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-card">
+                        <i class='bx bx-stats'></i>
+                        <h4>Оптимизация и архитектура</h4>
+                        <ul>
+                            <li>Использование паттерна MVVM для разделения логики, интерфейса и данных</li>
+                            <li>Повышение производительности с помощью оптимизированных SQL-запросов</li>
+                            <li>Обеспечение модульности и масштабируемости приложения с помощью принципов SOLID</li>
+                            <li>Реализация динамической загрузки данных из базы данных</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion">▼ Детали реализации</div>
+                <div class="panel">
+                    <h4>Системные особенности:</h4>
+                    <ul>
+                        <li>Интеграция с Excel для автоматической генерации отчетов</li>
+                        <li>Реализация корзины товаров с динамическим расчетом стоимости</li>
+                        <li>Система ролей для разных пользователей: директор, куратор, преподаватель, ученик</li>
+                        <li>Валидация данных на всех уровнях приложения для обеспечения целостности</li>
+                    </ul>
+            </div>
+        </section>
+
     </div>
 
     <footer>
@@ -349,7 +498,6 @@
         // Аккордеон
         document.querySelectorAll('.accordion').forEach(btn => {
             btn.addEventListener('click', function() {
-                this.classList.toggle('active');
                 const panel = this.nextElementSibling;
                 panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
             });
