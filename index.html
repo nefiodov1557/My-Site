@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Нефедов Дмитрий - Full Stack C# Developer</title>
+    <title>Нефедов Дмитрий - Junior C# Developer</title>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <style>
         :root {
@@ -257,9 +257,137 @@
         }
 
 
+        .tilda-carousel {
+        position: relative;
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 30px; /* Уменьшил боковые отступы */
+    }
+
+    
+
+.carousel-container {
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    position: relative;
+    padding-bottom: 56.25%; /* Соотношение 16:9 (измените при необходимости) */
+    flex-shrink: 0;
+}
+
+.carousel-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Было 'cover' */
+    background: #2a2a2a; /* Фон для изображений с прозрачностью */
+    border-radius: 8px;
+    padding: 10px; /* Отступ от границ контейнера */
+}
+
+.carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) scale(0.9);
+        width: 40px;
+        height: 40px;
+        background: rgba(232, 232, 232, 0.95);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 2;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+.carousel-arrow.prev {
+        left: -15px; /* Новое позиционирование */
+    }
+
+    .carousel-arrow.next {
+        right: -15px; /* Новое позиционирование */
+    }
+
+    .carousel-arrow:hover {
+        transform: translateY(-50%) scale(1);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+/* Исправление направления стрелок */
+.carousel-arrow.prev svg {
+    transform: scaleX(-1);
+}
+
+.carousel-arrow svg {
+    width: 9px;
+    height: 17px;
+    fill: none;
+    stroke: #000;
+    display: block;
+    margin: auto;
+}
+
+.carousel-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.carousel-bullet {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #c7c7c7;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-bullet.active {
+    background: var(--primary);
+}
+
+@media (max-width: 768px) {
+        .tilda-carousel {
+            padding: 0 15px;
+        }
+        
+        .carousel-arrow {
+            width: 35px;
+            height: 35px;
+        }
+        
+        .carousel-arrow.prev {
+            left: -10px; /* Корректировка для мобилок */
+        }
+        
+        .carousel-arrow.next {
+            right: -10px; /* Корректировка для мобилок */
+        }
+        
+    .carousel-item {
+        padding-bottom: 75%; /* 4:3 для мобильных */
+    }
+    
+    .carousel-image {
+        padding: 5px;
+    }
+    }
+
     </style>
 </head>
 <body>
+    
     <div class="container">
         <header class="header">
             <img src="media/image1.jpeg" alt="Фото" class="photo">
@@ -287,8 +415,9 @@
         <!-- Блок "Обо мне" -->
         <section class="section about-me">
             <h2>Обо мне</h2>
-            <p>Я — Junior C# разработчик с глубокими знаниями и практическим опытом в разработке программных продуктов на языке C#. Работал с технологиями WPF, MySQL, и использую асинхронное программирование для повышения производительности. Стремлюсь развиваться в области программирования, быстро осваиваю новые технологии и всегда открыт к обучению и новым вызовам.</p>
-            <p>Обладаю опытом разработки систем, включая создание интерактивных приложений, работу с базами данных и реализацию сложных бизнес-логик. Всегда стремлюсь создавать код, который будет не только эффективным, но и легко поддерживаемым.</p>
+            <p>Я — Junior разработчик с глубокими знаниями и практическим опытом в разработке программных продуктов на языке C#. В своей работе использую такие технологии, как WPF и MySQL, а также активно применяю асинхронное программирование для повышения производительности приложений.</p>
+            <p>Стремлюсь развиваться в области программирования, быстро осваиваю новые технологии и всегда открыт к обучению и новым вызовам.</p>
+            <p>Обладаю опытом разработки сложных систем, включая создание интерактивных приложений, работу с базами данных и реализацию сложных бизнес-логик. Всегда ориентируюсь на написание кода, который не только эффективен, но и легко поддерживаем, с фокусом на масштабируемость и удобство для пользователей.</p>
         </section>
 
         <!-- Цель -->
@@ -486,24 +615,50 @@
                         <li>Валидация данных на всех уровнях приложения для обеспечения целостности</li>
                     </ul>
             </div>
-        </section>
 
+                <!-- HTML структура -->
+            <div class="tilda-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-item">
+                            <img src="media/screen1.png" alt="Скриншот 1" class="carousel-image">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="media/screen2.png" alt="Скриншот 2" class="carousel-image">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="media/screen3.png" alt="Скриншот 3" class="carousel-image">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="media/screen4.png" alt="Скриншот 4" class="carousel-image">
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-arrow prev">
+                    <svg viewBox="0 0 9.3 17">
+                        <polyline points="0.5,0.5 8.5,8.5 0.5,16.5"></polyline>
+                    </svg>
+                </button>
+                
+                <button class="carousel-arrow next">
+                    <svg viewBox="0 0 9.3 17">
+                        <polyline points="0.5,0.5 8.5,8.5 0.5,16.5"></polyline>
+                    </svg>
+                </button>
+                
+                <div class="carousel-pagination"></div>
+            </div>
+        </section>
     </div>
 
     <footer>
         <p>2025 © Дмитрий Нефедов</p>
     </footer>
 
-    <script>
-        // Аккордеон
-        document.querySelectorAll('.accordion').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const panel = this.nextElementSibling;
-                panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
-            });
-        });
 
-        // Анимации
+    <script>
+        // АНИМАЦИИ СЕКЦИЙ
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting) {
@@ -513,11 +668,83 @@
             });
         });
 
-        document.querySelectorAll('.section, .job-item, .edu-item, .project-item').forEach(el => {
+        document.querySelectorAll('.section').forEach(el => {
             el.style.opacity = 0;
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'all 0.5s ease-out';
             observer.observe(el);
+        });
+
+        // АККОРДЕОН
+        document.querySelectorAll('.accordion').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const panel = this.nextElementSibling;
+                panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        // КАРУСЕЛЬ
+        class Carousel {
+            constructor(container) {
+                this.container = container;
+                this.track = container.querySelector('.carousel-track');
+                this.items = Array.from(container.querySelectorAll('.carousel-item'));
+                this.arrows = {
+                    prev: container.querySelector('.prev'),
+                    next: container.querySelector('.next')
+                };
+                this.pagination = container.querySelector('.carousel-pagination');
+                this.currentIndex = 0;
+                this.init();
+            }
+
+            init() {
+                this.createPagination();
+                this.setupEventListeners();
+                this.update();
+            }
+
+            createPagination() {
+                this.items.forEach((_, index) => {
+                    const bullet = document.createElement('button');
+                    bullet.classList.add('carousel-bullet');
+                    bullet.addEventListener('click', () => this.goTo(index));
+                    this.pagination.appendChild(bullet);
+                });
+            }
+
+            setupEventListeners() {
+                this.arrows.prev.addEventListener('click', () => this.prev());
+                this.arrows.next.addEventListener('click', () => this.next());
+            }
+
+            update() {
+                this.track.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+                this.pagination.querySelectorAll('.carousel-bullet').forEach((bullet, index) => {
+                    bullet.classList.toggle('active', index === this.currentIndex);
+                });
+            }
+
+            prev() {
+                this.currentIndex = Math.max(this.currentIndex - 1, 0);
+                this.update();
+            }
+
+            next() {
+                this.currentIndex = Math.min(this.currentIndex + 1, this.items.length - 1);
+                this.update();
+            }
+
+            goTo(index) {
+                this.currentIndex = index;
+                this.update();
+            }
+        }
+
+        // Инициализация карусели
+        document.querySelectorAll('.tilda-carousel').forEach(container => {
+            new Carousel(container);
         });
     </script>
 </body>
