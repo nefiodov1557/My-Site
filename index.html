@@ -87,6 +87,12 @@
             border-bottom: 2px solid var(--dark);
             padding-bottom: 0.5rem;
         }
+        .h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--dark);
+            padding-bottom: 0.5rem;
+        }
 
         .goal-container {
         display: grid;
@@ -507,6 +513,11 @@
                     <a href="mailto:nefedovdima03@mail.ru">nefedovdima03@mail.ru</a>
                 </div>
                 <div class="contact-item">
+                    <i class='bx bx-check-shield'></i>
+                    <a href="https://hh.ru/resume/8cf72dc7ff0b9e23940039ed1f423538626b58" target="_blank" rel="noopener noreferrer">Резюме HH.ru</a>
+                </div>
+                
+                <div class="contact-item">
                     <i class='bx bx-map'></i>
                     <p>Московская обл., Шаховская</p>
                 </div>
@@ -516,9 +527,9 @@
         <!-- Блок "Обо мне" -->
         <section class="section about-me">
             <h2>Обо мне</h2>
-            <p>Я — Junior разработчик с глубокими знаниями и практическим опытом в разработке программных продуктов на языке C#. В своей работе использую такие технологии, как WPF и MySQL, а также активно применяю асинхронное программирование для повышения производительности приложений.</p>
-            <p>Стремлюсь развиваться в области программирования, быстро осваиваю новые технологии и всегда открыт к обучению и новым вызовам.</p>
-            <p>Обладаю опытом разработки сложных систем, включая создание интерактивных приложений, работу с базами данных и реализацию сложных бизнес-логик. Всегда ориентируюсь на написание кода, который не только эффективен, но и легко поддерживаем, с фокусом на масштабируемость и удобство для пользователей.</p>
+            <p>Я — Junior C# разработчик с практическим опытом работы с WPF, MySQL и асинхронным программированием. Обладаю опытом разработки сложных систем, включая создание интерактивных приложений, работу с базами данных и реализацию сложных бизнес-логик.</p>
+            <p>Стремлюсь к развитию в области программирования, быстро осваиваю новые технологии и готов к обучению и решению новых задач.</p>
+            <p>Мой фокус — создание эффективного, масштабируемого и легко поддерживаемого кода, который обеспечивает удобство для пользователей.</p>
         </section>
 
         <!-- Цель -->
@@ -614,6 +625,7 @@
                 <p>Информационные системы и программирование</p>
             </div>
             
+            <h3 class="h3">Ключевые курсы</h3>
             <div class="edu-item">
                 <h3>Корпорация 1Т</h3>
                 <div class="timeline">2023</div>
@@ -626,27 +638,38 @@
             <h2>Технические навыки</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Программирование</h3>
+                    <h3>Программирование и разметка</h3>
                     <span class="skill-tag">C#</span>
                     <span class="skill-tag">WPF</span>
                     <span class="skill-tag">Python</span>
                     <span class="skill-tag">HTML/CSS</span>
+                </div>
+                <!-- Фреймворки и технологии -->
+                <div class="skill-category">
+                    <h3>Фреймворки и технологии</h3>
+                    <span class="skill-tag">WPF</span>
+                    <span class="skill-tag">MVVM</span>
+                </div>
+
+                <!-- Базы данных -->
+                <div class="skill-category">
+                    <h3>Базы данных</h3>
                     <span class="skill-tag">MySQL</span>
                 </div>
                 
                 <div class="skill-category">
                     <h3>Инструменты</h3>
                     <span class="skill-tag">Visual Studio</span>
+                    <span class="skill-tag">VS Code</span>
+                    <span class="skill-tag">Git</span>
                     <span class="skill-tag">Jira</span>
                     <span class="skill-tag">Confluence</span>
-                    <span class="skill-tag">Git</span>
                 </div>
 
                 <div class="skill-category">
                     <h3>Прочее</h3>
                     <span class="skill-tag">BPMN</span>
                     <span class="skill-tag">ООП</span>
-                    <span class="skill-tag">MVVM</span>
                 </div>
             </div>
         </section>
@@ -778,17 +801,28 @@
                         <div class="carousel-item">
                             <img src="media/screen4.png" alt="Скриншот 4" class="carousel-image">
                         </div>
+                        <div class="carousel-item">
+                            <img src="media/screen5.png" alt="Скриншот 5" class="carousel-image">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="media/screen6.png" alt="Скриншот 6" class="carousel-image">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="media/screen7.png" alt="Скриншот 7" class="carousel-image">
+                        </div>
                     </div>
                 </div>
                 
-                <button class="carousel-arrow prev">
-                    <svg viewBox="0 0 9.3 17">
+                <!-- Стрелка "Назад" -->
+                <button class="carousel-arrow prev" aria-label="Предыдущий слайд">
+                    <svg viewBox="0 0 9.3 17" aria-hidden="true">
                         <polyline points="0.5,0.5 8.5,8.5 0.5,16.5"></polyline>
                     </svg>
                 </button>
-                
-                <button class="carousel-arrow next">
-                    <svg viewBox="0 0 9.3 17">
+
+                <!-- Стрелка "Вперед" -->
+                <button class="carousel-arrow next" aria-label="Следующий слайд">
+                    <svg viewBox="0 0 9.3 17" aria-hidden="true">
                         <polyline points="0.5,0.5 8.5,8.5 0.5,16.5"></polyline>
                     </svg>
                 </button>
@@ -873,12 +907,14 @@
             }
 
             prev() {
-                this.currentIndex = Math.max(this.currentIndex - 1, 0);
+                // Перелистывание в обратном порядке (цикличное)
+                this.currentIndex = (this.currentIndex === 0) ? this.items.length - 1 : this.currentIndex - 1;
                 this.update();
             }
 
             next() {
-                this.currentIndex = Math.min(this.currentIndex + 1, this.items.length - 1);
+                // Перелистывание в прямом порядке (цикличное)
+                this.currentIndex = (this.currentIndex === this.items.length - 1) ? 0 : this.currentIndex + 1;
                 this.update();
             }
 
