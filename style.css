@@ -526,28 +526,37 @@ footer {
     }
 
     .tilda-carousel {
-        padding: 0 15px;
+        padding: 0 10px;
     }
 
     .carousel-item {
-        padding: 0 30px;
+        padding: 0 40px; /* Увеличиваем боковые отступы */
     }
     
     .carousel-image {
-        padding: 10px;
+        padding: 15px;
+        width: calc(100% - 30px); /* Учитываем padding */
+        left: 15px;
     }
     
     .carousel-arrow {
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
+        top: 45%;
+        -webkit-backdrop-filter: blur(4px); /* Для Safari */
+        backdrop-filter: blur(4px); /* Стандартное свойство */
     }
     
     .carousel-arrow.prev {
-        left: 5px;
+        left: 10px;
     }
-    
     .carousel-arrow.next {
-        right: 5px;
+        right: 10px;
+    }
+
+    .carousel-arrow svg {
+        width: 10px;
+        height: 16px;
     }
 }
 
@@ -574,5 +583,43 @@ footer {
 
     .detail-card {
         padding: 1rem;
+    }
+
+    /* Специфические правки для карусели */
+    .tilda-carousel {
+        padding: 0;
+    }
+
+    .carousel-item {
+        padding: 0 35px;
+    }
+
+    .carousel-image {
+        width: calc(100% - 20px);
+        left: 10px;
+        padding: 10px;
+    }
+
+    .carousel-arrow {
+        width: 25px;
+        height: 25px;
+        top: 40%;
+    }
+
+    .carousel-arrow.prev {
+        left: 5px;
+    }
+    
+    .carousel-arrow.next {
+        right: 5px;
+    }
+
+    .carousel-arrow svg {
+        width: 8px;
+        height: 14px;
+    }
+
+    .carousel-pagination {
+        margin-top: 15px;
     }
 }
