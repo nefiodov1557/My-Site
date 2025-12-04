@@ -137,6 +137,74 @@ h2 {
     font-size: 0.9rem;
 }
 
+/* Общие стили для панели с деталями */
+.panel {
+    padding-top: 10px;
+}
+
+/* Описание работы */
+.job-summary {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* Заголовки подразделов */
+.section-subtitle {
+    margin: 20px 0 10px 0;
+    font-size: 1.1em;
+}
+
+/* Список проектов */
+.project-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 10px;
+}
+
+.project-item {
+    margin-bottom: 1px;
+    padding-bottom: 1px;
+}
+
+.project-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.project-title {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 4px;
+}
+
+.project-description {
+    margin: 4px 0 3px 0;
+    line-height: 1.4;
+}
+
+.project-tech {
+    margin: 3px 0 0 0;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+/* Список обязанностей */
+.responsibilities-list {
+    padding-left: 18px;
+    margin-bottom: 15px;
+}
+
+.responsibility-item {
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.responsibility-item:last-child {
+    margin-bottom: 0;
+}
+
+
 /* ==================== НАВЫКИ ==================== */
 .skills-grid {
     display: grid;
